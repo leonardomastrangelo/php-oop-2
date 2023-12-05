@@ -1,5 +1,7 @@
 <?php
-class Book
+include __DIR__ . "/Product.php";
+
+class Book extends Product
 {
     private int $id;
     private string $title;
@@ -8,14 +10,16 @@ class Book
     private string $status;
     private array $authors;
 
-    function __construct($id, $title, $thumbnailUrl, $longDescription, $status, array $authors)
+    function __construct($id, $title, $thumbnailUrl, $longDescription, $status, array $authors, $price, $quantity)
     {
+        parent::__construct($price, $quantity);
         $this->id = $id;
         $this->title = $title;
         $this->thumbnailUrl = $thumbnailUrl;
         $this->longDescription = $longDescription;
         $this->status = $status;
         $this->authors = $authors;
+        $this->setPrice($authors);
     }
     public function printBook()
     {
@@ -25,7 +29,8 @@ class Book
         $longDescription = $this->longDescription;
         $status = $this->status;
         $authors = $this->authors;
-
+        $price = $this->getPrice();
+        $quantity = $this->quantity;
         //! template di books
         include __DIR__ . "/../View/bookCard.php";
     }
@@ -36,7 +41,9 @@ class Book
         $booksList = json_decode($booksString, true);
         $books = [];
         foreach ($booksList as $book) {
-            $books[] = new Book($book["_id"], $book["title"], $book["thumbnailUrl"], $book["longDescription"], $book["status"], $book["authors"]);
+            $price = rand(10, 89);
+            $quantity = rand(50, 4354);
+            $books[] = new Book($book["_id"], $book["title"], $book["thumbnailUrl"], $book["longDescription"], $book["status"], $book["authors"], $price, $quantity);
         }
         return $books;
     }

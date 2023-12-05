@@ -6,7 +6,7 @@
                 <?= $title ?>
             </h5>
             <p class="card-text py-2">
-                <?= $longDescription ?>
+                <?= $longDescription, 0, 250 ?>
             </p>
         </div>
         <ul class="list-group list-group-flush">
@@ -17,6 +17,14 @@
                 <?php foreach ($authors as $key => $author) {
                     echo " $author ";
                 } ?>
+            </li>
+            <li class="list-group-item">
+                Price :
+                <?= $price . ' $' ?>
+            </li>
+            <li class="list-group-item">
+                Quantity :
+                <?= $quantity ?>
             </li>
 
         </ul>

@@ -6,6 +6,14 @@
             <h5 class="card-title">
                 <?= $name ?>
             </h5>
+            <p class="card-text">
+                Price :
+                <?= $price . ' $' ?>
+            </p>
+            <p class="card-text">
+                Quantity :
+                <?= $quantity ?>
+            </p>
             <p class="card-text"><small class="text-body-secondary">
                     <?= 'Playtime : ' . $playtime_forever ?>
                 </small></p>

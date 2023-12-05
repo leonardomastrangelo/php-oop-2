@@ -2,7 +2,7 @@
     height: 840px;
 }
 .book {
-    height: 685px;
+    height: 740px;
 }
 .flag {
     width: 30px;
@@ -20,7 +20,7 @@
 }
 
 .card-text::-webkit-scrollbar {
-            width: 20px;
+            width: 15px;
         }
         
         .card-text::-webkit-scrollbar-track {
@@ -30,5 +30,5 @@
         .card-text::-webkit-scrollbar-thumb {
             background-image: url('https://i.ibb.co/1RHr40z/248599.png'); 
             background-repeat: no-repeat, no-repeat;
-            background-size: 20px;
+            background-size: 15px;
         }
