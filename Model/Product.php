@@ -13,7 +13,7 @@ class Product
     }
     public function setPrice($val)
     {
-        if ($val == 0 || count($val) == 1) {
+        if ($val == 0 || $val == 1) {
             $this->price -= $this->discount;
         }
     }
