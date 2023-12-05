@@ -19,7 +19,7 @@ class Book extends Product
         $this->longDescription = $longDescription;
         $this->status = $status;
         $this->authors = $authors;
-        $this->setPrice($authors);
+        $this->setPrice(count($authors));
     }
     public function printBook()
     {

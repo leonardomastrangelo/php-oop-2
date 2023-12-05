@@ -14,7 +14,7 @@ class Product
     public function setPrice($val)
     {
         if ($val == 0 || $val == 1) {
-            $this->price -= $this->discount;
+            $this->price -= ($this->price * $this->discount);
         }
     }
 
