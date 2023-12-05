@@ -5,7 +5,7 @@
             <h5 class="card-title">
                 <?= $title ?>
             </h5>
-            <p class="card-text py-2">
+            <p class="card-text py-1">
                 <?= $overview ?>
             </p>
         </div>
