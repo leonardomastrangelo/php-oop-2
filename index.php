@@ -9,12 +9,12 @@ $movies = Movie::fetchAll();
 </h1>
 <main class="container">
     <section class="row">
-        <!-- tramite un foreach, utilizzo il metodo printCard della classe Movie per stampare tutti i film di $movies -->
-        <?php
-        foreach ($movies as $key => $movie) {
-            $movie->printCard();
-        }
-        ?>
+        <?php foreach ($movies as $movie) { ?>
+            <div class="col-12 col-md-6 col-xl-4 py-4">
+                <!-- tramite un foreach, utilizzo il metodo printCard della classe Movie per stampare tutti i film di $movies -->
+                <?php $movie->printCard(); ?>
+            </div>
+        <?php } ?>
     </section>
 </main>
 <?php

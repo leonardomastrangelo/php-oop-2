@@ -9,11 +9,11 @@ $books = Book::fetchAll();
 </h1>
 <main class="container">
     <section class="row">
-        <?php
-        foreach ($books as $key => $book) {
-            $book->printBook();
-        }
-        ?>
+        <?php foreach ($books as $book) { ?>
+            <div class="col-12 col-md-6 col-xl-4 py-4">
+                <?php $book->printBook(); ?>
+            </div>
+        <?php } ?>
     </section>
 </main>
 <?php

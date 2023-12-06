@@ -1,7 +1,6 @@
 <?php
 class Product
 {
-    // protected non permette di modificare da esterno ma de stessa classe o classi figlie
     protected float $price;
     protected float $discount = 0.5;
     protected int $quantity;
@@ -20,7 +19,16 @@ class Product
 
     public function getPrice()
     {
-        return $this->price;
+        $priceString = $this->price;
+        $priceString .= ' $';
+        return $priceString;
     }
+    public function getQuantity()
+    {
+        $quantityString = 'Quantity : ';
+        $quantityString .= $this->price;
+        return $quantityString;
+    }
+
 }
 ?>

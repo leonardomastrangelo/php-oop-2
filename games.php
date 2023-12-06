@@ -9,11 +9,11 @@ $games = Game::fetchAll();
 </h1>
 <main class="container">
     <section class="row">
-        <?php
-        foreach ($games as $key => $game) {
-            $game->printGame();
-        }
-        ?>
+        <?php foreach ($games as $game) { ?>
+            <div class="col-6 py-4">
+                <?php $game->printGame(); ?>
+            </div>
+        <?php } ?>
     </section>
 </main>
 <?php

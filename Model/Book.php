@@ -25,14 +25,23 @@ class Book extends Product
     {
         $id = $this->id;
         $title = $this->title;
-        $thumbnailUrl = $this->thumbnailUrl;
-        $longDescription = $this->longDescription;
-        $status = $this->status;
-        $authors = $this->authors;
-        $price = $this->getPrice();
-        $quantity = $this->quantity;
+        $image = $this->thumbnailUrl;
+        $overview = $this->longDescription;
+        $custom_1 = $this->status;
+        $custom_2 = $this->getAuthors();
+        $custom_3 = $this->getPrice();
+        $custom_4 = $this->quantity;
         //! template di books
-        include __DIR__ . "/../View/bookCard.php";
+        include __DIR__ . "/../View/card.php";
+    }
+
+    public function getAuthors()
+    {
+        $authorsString = "";
+        foreach ($this->authors as $author) {
+            $authorsString .= $author . ' ';
+        }
+        return $authorsString;
     }
 
     public static function fetchAll()

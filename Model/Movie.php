@@ -39,13 +39,13 @@ class Movie
     # creo un metodo che permette di stampare una card per movie
     public function printCard()
     {
-        $poster_path = $this->poster_path;
+        $image = $this->poster_path;
         $title = $this->title;
         $overview = $this->overview;
-        $original_language = $this->langToFlag();
-        $release_date = $this->release_date;
-        $vote_average = $this->getVote();
-        $genre = $this->genre->name;
+        $flag = $this->langToFlag();
+        $custom_1 = $this->release_date;
+        $custom_2 = $this->getVote();
+        $custom_3 = $this->genre->name;
 
         //! inserisco il template di card.php
         include __DIR__ . "/../View/card.php";

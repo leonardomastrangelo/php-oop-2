@@ -1,24 +1,10 @@
-.movie {
-    height: 840px;
-}
-.book {
-    height: 740px;
+.card-text {
+    height: 100px;
+    overflow: auto;
 }
 .flag {
     width: 30px;
 }
-.poster {
-    height: 470px;
-}
-.movie .card-text {
-    height: 100px;
-    overflow: auto;
-}
-.book .card-text {
-    height: 130px;
-    overflow: auto;
-}
-
 .card-text::-webkit-scrollbar {
             width: 15px;
         }

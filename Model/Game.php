@@ -2,28 +2,34 @@
 include __DIR__ . "/Product.php";
 class Game extends Product
 {
-    private int $appid;
+    private string $img_icon_url;
     private string $name;
     private int $playtime_forever;
 
-    public function __construct($appid, $name, $playtime_forever, $price, $quantity)
+    public function __construct($img_icon_url, $name, $playtime_forever, $price, $quantity)
     {
         parent::__construct($price, $quantity);
-        $this->appid = $appid;
+        $this->img_icon_url = $img_icon_url;
         $this->name = $name;
         $this->playtime_forever = $playtime_forever;
         $this->setPrice($playtime_forever);
     }
     public function printGame()
     {
-        $appid = $this->appid;
-        $name = $this->name;
-        $playtime_forever = $this->playtime_forever;
-        $price = $this->getPrice();
-        $quantity = $this->quantity;
+        $image = $this->img_icon_url;
+        $title = $this->name;
+        $custom_1 = $this->getPlayTime();
+        $custom_2 = $this->getPrice();
+        $custom_3 = $this->getQuantity();
         //! template di games
-        include __DIR__ . "/../View/gameCard.php";
+        include __DIR__ . "/../View/card.php";
 
+    }
+    public function getPlayTime()
+    {
+        $playTimeString = "Playtime : ";
+        $playTimeString .= $this->playtime_forever;
+        return $playTimeString;
     }
 
     public static function fetchAll()
@@ -34,7 +40,7 @@ class Game extends Product
         foreach ($gamesList as $game) {
             $price = rand(10, 89);
             $quantity = rand(50, 4354);
-            $games[] = new Game($game["appid"], $game["name"], $game["playtime_forever"], $price, $quantity);
+            $games[] = new Game($game["img_icon_url"], $game["name"], $game["playtime_forever"], $price, $quantity);
         }
         return $games;
     }
