@@ -1,10 +1,11 @@
 <?php
 //! includo il file Genre.php
 include __DIR__ . "/Genre.php";
-
+include __DIR__ . "/../Traits/Drawcard.php";
 //* definisco la classe movie
 class Movie
 {
+    use Drawcard;
     # definisco gli attributi della classe Movie
     private int $id;
     private string $poster_path;
@@ -37,18 +38,19 @@ class Movie
     }
 
     # creo un metodo che permette di stampare una card per movie
-    public function printCard()
+    public function formatCard()
     {
-        $image = $this->poster_path;
-        $title = $this->title;
-        $overview = $this->overview;
-        $flag = $this->langToFlag();
-        $custom_1 = $this->release_date;
-        $custom_2 = $this->getVote();
-        $custom_3 = $this->genre->name;
+        $cardData = [
+            "image" => $this->poster_path,
+            "title" => $this->title,
+            "overview" => $this->overview,
+            "flag" => $this->langToFlag(),
+            "custom_1" => $this->release_date,
+            "custom_2" => $this->getVote(),
+            "custom_3" => $this->genre->name
 
-        //! inserisco il template di card.php
-        include __DIR__ . "/../View/card.php";
+        ];
+        return $cardData;
     }
     # creo un metodo per convertire la lingua in bandiera
     public function langToFlag()

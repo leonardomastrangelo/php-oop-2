@@ -11,7 +11,7 @@ $books = Book::fetchAll();
     <section class="row">
         <?php foreach ($books as $book) { ?>
             <div class="col-12 col-md-6 col-xl-4 py-4">
-                <?php $book->printBook(); ?>
+                <?php $book->drawCard($book->formatCard()); ?>
             </div>
         <?php } ?>
     </section>

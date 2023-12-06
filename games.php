@@ -11,7 +11,7 @@ $games = Game::fetchAll();
     <section class="row">
         <?php foreach ($games as $game) { ?>
             <div class="col-6 py-4">
-                <?php $game->printGame(); ?>
+                <?php $game->drawCard($game->formatCard()); ?>
             </div>
         <?php } ?>
     </section>

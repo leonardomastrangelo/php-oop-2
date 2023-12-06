@@ -14,15 +14,16 @@ class Game extends Product
         $this->playtime_forever = $playtime_forever;
         $this->setPrice($playtime_forever);
     }
-    public function printGame()
+    public function formatCard()
     {
-        $image = $this->img_icon_url;
-        $title = $this->name;
-        $custom_1 = $this->getPlayTime();
-        $custom_2 = $this->getPrice();
-        $custom_3 = $this->getQuantity();
-        //! template di games
-        include __DIR__ . "/../View/card.php";
+        $cardData = [
+            "image" => $this->img_icon_url,
+            "title" => $this->name,
+            "custom_1" => $this->getPlayTime(),
+            "custom_2" => $this->getPrice(),
+            "custom_3" => $this->getQuantity(),
+        ];
+        return $cardData;
 
     }
     public function getPlayTime()

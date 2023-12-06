@@ -1,6 +1,10 @@
 <?php
+include __DIR__ . "/../Traits/Drawcard.php";
+
 class Product
 {
+    use Drawcard;
+
     protected float $price;
     protected float $discount = 0.5;
     protected int $quantity;

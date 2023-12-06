@@ -31,5 +31,10 @@
                 <?= $custom_3 ?>
             </li>
         <?php } ?>
+        <?php if (isset($custom_4)) { ?>
+            <li class="list-group-item">
+                <?= $custom_4 ?>
+            </li>
+        <?php } ?>
     </ul>
 </div>

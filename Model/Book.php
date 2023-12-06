@@ -21,18 +21,19 @@ class Book extends Product
         $this->authors = $authors;
         $this->setPrice(count($authors));
     }
-    public function printBook()
+    public function formatCard()
     {
-        $id = $this->id;
-        $title = $this->title;
-        $image = $this->thumbnailUrl;
-        $overview = $this->longDescription;
-        $custom_1 = $this->status;
-        $custom_2 = $this->getAuthors();
-        $custom_3 = $this->getPrice();
-        $custom_4 = $this->quantity;
-        //! template di books
-        include __DIR__ . "/../View/card.php";
+        $cardData = [
+            "id" => $this->id,
+            "title" => $this->title,
+            "image" => $this->thumbnailUrl,
+            "overview" => $this->longDescription,
+            "custom_1" => $this->status,
+            "custom_2" => $this->getAuthors(),
+            "custom_3" => $this->getPrice(),
+            "custom_4" => $this->getQuantity(),
+        ];
+        return $cardData;
     }
 
     public function getAuthors()
