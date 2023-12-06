@@ -1,4 +1,4 @@
-<div class="card h-100">
+<div class="card h-100 position-relative">
     <img class="w-100 d-block" src="<?= $image ?>" class="card-img-top" alt="<?= $title ?>">
     <div class="card-body overflow-hidden">
         <h5 class="card-title">

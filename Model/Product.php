@@ -6,7 +6,7 @@ class Product
     use Drawcard;
 
     protected float $price;
-    protected float $discount = 0.5;
+    protected float $discount;
     protected int $quantity;
 
     public function __construct($price, $quantity)
@@ -16,6 +16,7 @@ class Product
     }
     public function setPrice($val)
     {
+        $this->discount = 0.5;
         if ($val == 0 || $val == 1) {
             $this->price -= ($this->price * $this->discount);
         }
@@ -30,7 +31,7 @@ class Product
     public function getQuantity()
     {
         $quantityString = 'Quantity : ';
-        $quantityString .= $this->price;
+        $quantityString .= $this->quantity;
         return $quantityString;
     }
 
