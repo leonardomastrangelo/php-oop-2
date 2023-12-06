@@ -32,6 +32,7 @@ class Book extends Product
             "custom_2" => $this->getAuthors(),
             "custom_3" => $this->getPrice(),
             "custom_4" => $this->getQuantity(),
+            "discount" => $this->obtainDiscount(count($this->authors)),
         ];
         return $cardData;
     }

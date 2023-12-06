@@ -37,4 +37,10 @@
             </li>
         <?php } ?>
     </ul>
+    <?php if (isset($discount) && $discount > 0) { ?>
+        <div class="discount">
+            <?= $discount = "50%" ?>
+        </div>
+    <?php } ?>
+
 </div>

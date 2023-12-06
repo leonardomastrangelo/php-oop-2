@@ -22,6 +22,7 @@ class Game extends Product
             "custom_1" => $this->getPlayTime(),
             "custom_2" => $this->getPrice(),
             "custom_3" => $this->getQuantity(),
+            "discount" => $this->obtainDiscount($this->playtime_forever),
         ];
         return $cardData;
 
